@@ -1,7 +1,6 @@
 # Ausgewogen halbieren: Kernighan–Lin und Fiduccia–Mattheyses – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-bisektion-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-bisektion-demo.streamlit.app/)**
 
 Fünftes Stück der Reihe **Schnitte und Zusammenhang** (Arbeitstitel der Linie `schnitte-zusammenhang`) in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“, Bereich Graphentheorie. Vehikel: ein **Verbindungsnetz zwischen Standorten** (Depots, Umschlagpunkte, Werke), synthetisch und mit festem Zufalls-Seed, alle Leitungen gleich. Die Demo fragt: **Wie teilt man das Netz in zwei gleich große Hälften, zwischen denen möglichst wenige Leitungen liegen, und warum muss man „gleich groß“ verlangen?** Zwei klassische Verbesserungsverfahren starten von einer zufälligen Anordnung: **Kernighan–Lin** tauscht Paare aus beiden Hälften, **Fiduccia–Mattheyses** verschiebt einzelne Standorte und lässt die Hälften dabei kurz ungleich groß werden (Spielraum).
 
