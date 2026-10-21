@@ -179,8 +179,8 @@ def verdict_balance(rows):
     low, high = min(r["min_ratio"] for r in rows), max(r["max_ratio"] for r in rows)
     triv = sum(r["trivial"] for r in rows)
     text = (f"Auf {_i(nets)} Netzen ({len(rows)} Netztypen, {_i(rows[0]['n'])} Standorte) kostet die kleinste ausgewogene Zweiteilung im Mittel je Netztyp das {_dec(mean(lo))}-Fache ({lo['label']}) bis "
-            f"{_dec(mean(hi))}-Fache ({hi['label']}) des kleinsten Schnitts ohne Balance; im einzelnen Netz das {_dec(low)}- bis {_dec(high)}-Fache. Der kleinste Schnitt trennt in {_i(triv)} von {_i(nets)} Netzen "
-            f"nur einen einzelnen Standort ab.")
+            f"{_dec(mean(hi))}-Fache ({hi['label']}) des kleinsten Schnitts ohne Balance; im einzelnen Netz das {_dec(low)}- bis {_dec(high)}-Fache. In {_i(triv)} von {_i(nets)} Netzen "
+            f"ist ein kleinster Schnitt ein einzelner Standort.")
     return "info", text
 
 
@@ -219,5 +219,5 @@ def verdict_slack(rows):
             + f"; der Start liegt im Mittel bei {_dec(rows[0]['sum_start'] / rows[0]['runs'])}.")
     if zero:
         text += f" Ohne Spielraum war in {_i(zero['stuck'])} von {_i(zero['runs'])} Läufen jeder Zug blockiert."
-    text += f" Am besten ist der Spielraum {_i(best['slack'])}."
+    text += f" Im Mittel über alle Läufe ist der Spielraum {_i(best['slack'])} am besten."
     return "info", text

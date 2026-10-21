@@ -85,8 +85,8 @@ with st.container(key="kopf"):
     st.title("⚖️ Ausgewogen halbieren: Kernighan–Lin und Fiduccia–Mattheyses")
 st.markdown(
     """
-**Wie teilt man ein Netz in zwei gleich große Hälften mit möglichst wenig Leitungen dazwischen?** Das ist eine **Bisektion**. Der kleinste Schnitt ohne Balance (Stück 2 der Reihe) hilft hier nicht: Er trennt meist nur einen einzelnen
-Standort ab. Wer **ausgewogen** teilen will, rechnet eine andere Aufgabe, und sie ist schwer. Die Demo zeigt zwei Verbesserungsverfahren, die von einer Zufallsanordnung ausgehen: **Kernighan–Lin** tauscht **Paare** aus beiden Hälften
+**Wie teilt man ein Netz in zwei gleich große Hälften mit möglichst wenig Leitungen dazwischen?** Das ist eine **Bisektion**. Der kleinste Schnitt ohne Balance (Stück 2 der Reihe) hilft hier nicht: Er trennt auf den Modellnetzen meist nur einen einzelnen
+Standort ab (nicht beim Verbundnetz, beim Kartennetz nur teils). Wer **ausgewogen** teilen will, rechnet eine andere Aufgabe, und sie ist schwer. Die Demo zeigt zwei Verbesserungsverfahren, die von einer Zufallsanordnung ausgehen: **Kernighan–Lin** tauscht **Paare** aus beiden Hälften
 (der beste Präfix einer Gewinnfolge wird ausgeführt), **Fiduccia–Mattheyses** verschiebt **einzelne** Standorte und darf dabei die Hälften kurz verschieden groß werden lassen (**Spielraum**).
 
 Auffällig: Beide Verfahren bleiben von **einer** Zufallsanordnung aus oft über dem Optimum stehen; **mehrere Starts** helfen. Und der Spielraum der Balance ist keine Nebensache: **Ohne Spielraum ist bei gerader Standortzahl jeder Zug blockiert.**

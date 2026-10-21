@@ -31,7 +31,7 @@ def test_verdict_balance_names_the_cheapest_and_the_dearest_net_type():
     kind, text = ev.verdict_balance(rows)
     assert kind == "info"
     assert text == ("Auf 4 Netzen (2 Netztypen, 8 Standorte) kostet die kleinste ausgewogene Zweiteilung im Mittel je Netztyp das 3-Fache (A) bis 4,5-Fache (B) des kleinsten Schnitts ohne Balance; "
-                    "im einzelnen Netz das 2- bis 6,5-Fache. Der kleinste Schnitt trennt in 2 von 4 Netzen nur einen einzelnen Standort ab.")
+                    "im einzelnen Netz das 2- bis 6,5-Fache. In 2 von 4 Netzen ist ein kleinster Schnitt ein einzelner Standort.")
     rows.reverse()
     assert "das 3-Fache (A) bis 4,5-Fache (B)" in ev.verdict_balance(rows)[1]                    # unabhängig von der Reihenfolge
 
@@ -70,11 +70,11 @@ def test_verdict_slack_lists_every_slack_and_names_the_best():
     kind, text = ev.verdict_slack(rows)
     assert kind == "info"
     assert text == ("Bei 10 Standorten mit Fiduccia–Mattheyses endet ein Lauf im Mittel bei 10 (Spielraum 0), 5 (Spielraum 1), 6,5 (Spielraum 2); der Start liegt im Mittel bei 10. "
-                    "Ohne Spielraum war in 4 von 4 Läufen jeder Zug blockiert. Am besten ist der Spielraum 1.")
+                    "Ohne Spielraum war in 4 von 4 Läufen jeder Zug blockiert. Im Mittel über alle Läufe ist der Spielraum 1 am besten.")
     no_zero = ev.verdict_slack(rows[1:])[1]
-    assert "Ohne Spielraum" not in no_zero and no_zero.endswith("Am besten ist der Spielraum 1.")
+    assert "Ohne Spielraum" not in no_zero and no_zero.endswith("Im Mittel über alle Läufe ist der Spielraum 1 am besten.")
     rows[2]["sum_final"] = 12                                                                  # mittlerer Endwert 3: Spielraum 2 ist jetzt am besten
-    assert ev.verdict_slack(rows)[1].endswith("Am besten ist der Spielraum 2.")
+    assert ev.verdict_slack(rows)[1].endswith("Im Mittel über alle Läufe ist der Spielraum 2 am besten.")
 
 
 def test_verdict_question_for_the_textbook_network_by_hand():
